@@ -11,7 +11,6 @@
  * @see no borrowed code
  */
 
-import java.util.ArrayList;
 public class YahtzeeTester {
 
     /**
@@ -21,27 +20,21 @@ public class YahtzeeTester {
 
         Dice yahtzee = new Dice();
         Hand yHand = new Hand();
-        Score yScore = new Score();
+        //Score yScore = new Score();
 
         //turn loop
         while(yHand.playAgain != 'n') {
-            //init keep string outside roll loop, reset each turn
-           // yHand.initKeep();
-            yHand.curTurn = 0;
+            yHand.initHand();
             //number of rounds control loop
             while (yHand.curTurn < yHand.maxTurns && yHand.numN > 0) {
-               // yHand.sortKeep();
                 yHand.newHand();
-
-                //yHand.displayArr();
                 yHand.keepDie();
-               //yHand.displayArr(yHand.hand);
-                yHand.curTurn++;
-                //yHand.sortKeep();
+               //yHand.curTurn++; //move to keep die maybe?
             }
-            yHand.sortKeep();
+            yHand.sortHand();
             System.out.print("Your sorted hand is: ");
-            yHand.displayArr();
+            yHand.displayHand();
+            System.out.print('\n');
 
             //scoring begins:
             yScore.totalOfEachNumScore();
@@ -52,7 +45,6 @@ public class YahtzeeTester {
             System.out.println("Score: " + yScore.totalAllDice() + " on the Chance line.");
 
             yHand.playAgain = yHand.askToPlayAgain(); //after turn
-
         }
 
     }

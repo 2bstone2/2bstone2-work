@@ -14,9 +14,9 @@ public class Score {
      * Totals the quantity of each number of the die and outputs the score
      */
     //upper scorecard
-    public void totalOfEachNumScore() {
+    public static void totalOfEachNumScore() {
 
-        for (int i = 1; i < Dice.max; i++) {
+        for (int i = 1; i <= Dice.max; i++) {
             int count = 0;
             for (int j = 0; j < Dice.numDie; j++) {
                 if (Hand.hand.get(j) == i) {
@@ -32,7 +32,7 @@ public class Score {
      * @return the sum of the final hand of die
      */
     //lower scorecard
-    public int totalAllDice() {
+    public static int totalAllDice() {
         int total = 0;
         for (int i = 0; i < Dice.numDie; i++) {
             total+= Hand.hand.get(i);
@@ -44,13 +44,13 @@ public class Score {
      * Finds if there is a full house in the final hand.
      * @return 0 if there is no full house, 25 if a full house was found
      */
-    public int findFullHouse() {
+    public static int findFullHouse() {
         boolean fullHouse = false;
         int count;
         boolean twoCount = false;
         boolean threeCount = false;
 
-        for (int i = 1; i < Dice.max; i++) {
+        for (int i = 1; i <= Dice.max; i++) {
             count = 0;
             for (int j = 0; j < Dice.numDie; j++) {
                 if (Hand.hand.get(j) == i) {
@@ -79,12 +79,12 @@ public class Score {
      * Searches the final hand for the highest recurrence of a number
      */
 
-    public void findMaxOfAKind() {
+    public static void findMaxOfAKind() {
         int count;
         int maxCount = 0;
         int score;
 
-        for (int i = 1; i < Dice.max; i++) {
+        for (int i = 1; i <= Dice.max; i++) {
             count = 0;
             for (int j = 0; j < Dice.numDie; j++) {
                 if (Hand.hand.get(j) == i) {
@@ -114,7 +114,7 @@ public class Score {
      * Iterates through final hand and looks for the longest straight
      */
 
-    public void findMaxStraight() {
+    public static void findMaxStraight() {
         int curCount = 1;
         int maxCount = 1;
 
@@ -147,7 +147,7 @@ public class Score {
     /**
      * iterates through final hand and looks for a yahtzee
      */
-    public void findYahtzee () {
+    public static void findYahtzee () {
         boolean yahtzee = false;
         int num = Hand.hand.get(0);
         int count = 0;
