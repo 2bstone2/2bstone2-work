@@ -11,12 +11,10 @@
 import java.util.Random;
 
 public class Dice {
-    public static int numDie;
     public static int min;
     public static int max;
 
-    public Dice() {
-        numDie = 5; //TODO read in for hw 2
+    Dice() {
         min = 1; //TODO read in
         max = 6; //TODO read in and adjust index
     }

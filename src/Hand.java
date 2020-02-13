@@ -1,5 +1,5 @@
 /**
- * This program controls the hand and re-rolls of the dice based on user inputted keep values.
+ * This program controls the hand and re-rolls of the dice based on user inputted keepStr values.
  * Additionally, it tracks the number of turns and redirects a player to play again. Keep and hand are
  * parallel array lists.
  *
@@ -11,40 +11,41 @@
  * @version v1.0 2/3/2020
  *
  */
+/*
+TODO:
+- change dieArr.get() just to the index
+- to yahtzeeTest
+    - when to get the ones to keep function
+
+???maybe a turn class later on
+*/
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Scanner; // TODO: take out maybe
 
 public class Hand {
 
-    public static ArrayList<Integer> hand = new ArrayList(Dice.numDie);
     public int numN;
-    public String keep;
-    public char playAgain;
-    public static final int maxTurns = 3; //move to yahtzee
-    public static int curTurn;
-    private static char userAns;
+    public static String keepStr;
+    public static int numDie = 5;//todo: change to file input
+    public static ArrayList<Integer> dieArr = new ArrayList(numDie);
 
     Hand() {
-        keep = "";
+        keepStr= "";
         //initialize handArr and keepArr
-        for (int i = 0; i < Dice.numDie; i++) {
-            keep = keep + 'n';
-            hand.add(i, Dice.rollDie());
+        for (int i = 0; i < numDie; i++) {
+            keepStr= keepStr+ 'n';
+            dieArr.add(i, Dice.rollDie());
         }
-        numN = Dice.numDie;
-
-        playAgain = 'y';
-        curTurn = 0;
+        numN = numDie;
     }
 
     /**
      * Initializes keep to an array of all 'n' at the beginning of each turn
      */
     public void initHand() {
-        keep = keep.replace('y','n');
-        curTurn = 0;
-        numN = Dice.numDie;
+        keepStr= keepStr.replace('y','n');
+        numN = numDie;
     }
 
     /**
@@ -54,10 +55,9 @@ public class Hand {
     public void newHand() {
 
         System.out.print("Your roll was: ");
-        for (int i = 0; i < Dice.numDie; i++) {
-            if (keep.charAt(i) == 'n') {
-                hand.set(i, Dice.rollDie()); //change to hand.set
-            }
+        for (int i = 0; i < numDie; i++) {
+            if (keepStr.charAt(i) == 'n')
+                dieArr.set(i, Dice.rollDie());
         }
         displayHand();
         System.out.print("\n");
@@ -66,22 +66,23 @@ public class Hand {
     /**
      * Prompts user to enter which die to keep and load them into the keep arrayList
      */
-    public void keepDie() { //TODO should this be in Dice?
+    public void keepHand() { //TODO should this be in yahtzee?
         Scanner toKeepSc = new Scanner(System.in);
         int tempN = 0;
 
-        if (curTurn < maxTurns - 1) { //might need later for scoring
+        //TODO: MOVE TO YAHTZEE FUNCTION???
+        if (YahtzeeTester.curTurn < YahtzeeTester.maxTurns - 1) { //might need later for scoring
             System.out.print("Enter dice to keep (y or n): ");
-            keep = toKeepSc.nextLine();
+            keepStr= toKeepSc.nextLine();
             System.out.print('\n');
         }
+
+
         //calcs number of n for while loop control
-        for(int i = 0; i < Dice.numDie; i++) {
-            if (keep.charAt(i) == 'n') {
+        for(int i = 0; i < numDie; i++) {
+            if (keepStr.charAt(i) == 'n')
                 tempN++;
-            }
         }
-        curTurn++;
         numN = tempN;
     }
 
@@ -91,42 +92,23 @@ public class Hand {
      * the first and second re-roll and sorts and pushes all kept die (now in descending order) to the front of the
      * hand array for viewing ease.
      */
-    public void sortHand() { //TODO: update for generic
-        for (int i = 0; i < Dice.numDie; i++) {
-            for (int j = 0; j < Dice.numDie - i - 1; j++) {
-                if (hand.get(j) > hand.get(j + 1)) {
-                    int tempNum = hand.get(j);
-                    hand.set(j, hand.get(j + 1));
-                    hand.set(j + 1, tempNum);
+    public void sortHand() {
+        for (int i = 0; i < numDie; i++) {
+            for (int j = 0; j < numDie - i - 1; j++) {
+                if (dieArr.get(j) > dieArr.get(j + 1)) {
+                    int tempNum = dieArr.get(j);
+                    dieArr.set(j, dieArr.get(j + 1));
+                    dieArr.set(j + 1, tempNum);
                 }
             }
         }
     }
 
     /**
-     * Prompts the user to play again when either the number of current rounds reaches the maximum amount, or
-     * when the user wants to keep all of their dice.
-     * @return 'y' for yes to play again and continue the loop, 'n' to exit the game.
-     */
-    public char askToPlayAgain() { //TODO: move to yahtzeeTester?
-        Scanner playAgainSc = new Scanner(System.in);
-
-        System.out.println("\nEnter 'y' to play again or 'n' ");
-        userAns = playAgainSc.next().charAt(0);
-
-        if (userAns != 'y')
-            System.exit(0);
-            // Eventually call a change player function, for now, only exits program
-
-        return userAns;
-    }
-
-    /**
      * Displays the hand array which contains the die values
      */
     public void displayHand() {
-        for (int i = 0; i < Dice.numDie; i++)
-            System.out.print(hand.get(i) + " ");
+        for (int i = 0; i < numDie; i++)
+            System.out.print(dieArr.get(i) + " ");
     }
-
 }

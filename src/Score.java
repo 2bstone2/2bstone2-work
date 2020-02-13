@@ -8,7 +8,7 @@
  * @author Bailey Stone
  * @version v1.0 2/3/2020
  */
-
+//TODO change for more die sides
 public class Score {
     /**
      * Totals the quantity of each number of the die and outputs the score
@@ -16,12 +16,11 @@ public class Score {
     //upper scorecard
     public static void totalOfEachNumScore() {
 
-        for (int i = 1; i <= Dice.max; i++) {
+        for (int i = Dice.min; i <= Dice.max; i++) {
             int count = 0;
-            for (int j = 0; j < Dice.numDie; j++) {
-                if (Hand.hand.get(j) == i) {
+            for (int j = 0; j < Hand.numDie; j++) {
+                if (Hand.dieArr.get(j) == i)
                     count++;
-                }
             }
             System.out.println("Score: " + count*i + " on the " + i + " line.");
         }
@@ -34,9 +33,9 @@ public class Score {
     //lower scorecard
     public static int totalAllDice() {
         int total = 0;
-        for (int i = 0; i < Dice.numDie; i++) {
-            total+= Hand.hand.get(i);
-        }
+        for (int i = 0; i < Hand.numDie; i++)
+            total+= Hand.dieArr.get(i);
+
         return total;
     }
 
@@ -52,10 +51,9 @@ public class Score {
 
         for (int i = 1; i <= Dice.max; i++) {
             count = 0;
-            for (int j = 0; j < Dice.numDie; j++) {
-                if (Hand.hand.get(j) == i) {
+            for (int j = 0; j < Hand.numDie; j++) {
+                if (Hand.dieArr.get(j) == i)
                     count++;
-                }
             }
             if (count == 2) {
                 twoCount = true;
@@ -78,7 +76,6 @@ public class Score {
     /**
      * Searches the final hand for the highest recurrence of a number
      */
-
     public static void findMaxOfAKind() {
         int count;
         int maxCount = 0;
@@ -86,14 +83,12 @@ public class Score {
 
         for (int i = 1; i <= Dice.max; i++) {
             count = 0;
-            for (int j = 0; j < Dice.numDie; j++) {
-                if (Hand.hand.get(j) == i) {
+            for (int j = 0; j < Hand.numDie; j++) {
+                if (Hand.dieArr.get(j) == i)
                     count++;
-                }
             }
-            if (count > maxCount) {
+            if (count > maxCount)
                 maxCount = count;
-            }
         }
 
             if (maxCount == 3) {
@@ -118,18 +113,18 @@ public class Score {
         int curCount = 1;
         int maxCount = 1;
 
-        for(int i = 0; i < Dice.numDie - 1; i++) {
-            if (Hand.hand.get(i) + 1 == Hand.hand.get(i + 1)) {
+        for(int i = 0; i < Hand.numDie - 1; i++) {
+            if (Hand.dieArr.get(i) + 1 == Hand.dieArr.get(i + 1)) {
                 curCount++;
             }
-            else if (Hand.hand.get(i) + 1 < Hand.hand.get(i+ 1)){
+            else if (Hand.dieArr.get(i) + 1 < Hand.dieArr.get(i+ 1)){
                 curCount = 1;
             }
 
-            if (curCount > maxCount) {
+            if (curCount > maxCount)
                 maxCount = curCount;
-            }
         }
+
         if (maxCount == 4) {
             System.out.println("Score: " + totalAllDice() + " on the Small Straight Line.");
             System.out.println("Score: 0 on the Large Straight Line.");
@@ -149,11 +144,11 @@ public class Score {
      */
     public static void findYahtzee () {
         boolean yahtzee = false;
-        int num = Hand.hand.get(0);
+        int num = Hand.dieArr.get(0);
         int count = 0;
 
-        for (int i = 0; i < Dice.numDie; i++) {
-            if (Hand.hand.get(i) == num) {
+        for (int i = 0; i < Hand.numDie; i++) {
+            if (Hand.dieArr.get(i) == num) {
                 count++;
             }
             else {
@@ -161,7 +156,7 @@ public class Score {
             }
         }
 
-        if (count == Dice.numDie) {
+        if (count == Hand.numDie) {
             System.out.println("Score: 50 on the Yahtzee Line.");
             yahtzee = true;
         }
