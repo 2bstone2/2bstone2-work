@@ -17,36 +17,38 @@ import java.util.Scanner;
 public class YahtzeeTester {
     public static int maxTurns = 3; //TODO: read in from file
     public static int curTurn;
+
+    /*Yahtzee() { //TODO: need this constructor??
+        maxTurns = 3; //TODO: read in from file
+    }*/
+
     /**
      * Yahtzee Tester drives the Yahtzee program by making use of classes Dice, Hand and Score
      */
     public static void main(String[] args) {
 
-        //TODO: fix this
-        Dice yahtzee = new Dice();
         Hand yHand = new Hand();
-        //Score yScore = new Score();
-
-
+        Dice yahtzee = new Dice();
         char playAgain = 'y';
-        boolean containsN = true; //TODO: get rid of numN and move to hand
-       // int curTurn; //TODO: pass into eventually if needed maybe?
+        // int curTurn; //TODO: pass into eventually if needed maybe?
+
         //turn loop
         while(playAgain != 'n') {
-            yHand.initHand();
-            curTurn = 0;
-            containsN = true;
+            curTurn = 1; //TODO: ?ok to have in main?.. need a function?
+
+            yHand.keepStr = yHand.keepStr.replace('y','n'); //TODO: make a function?
+
             //number of rounds control loop
-            while (curTurn < maxTurns && containsN == true) {
-                yHand.newHand();
-                yHand.keepHand();
-                containsN = Hand.keepStr.contains("n");
+            while (curTurn <= maxTurns && yHand.checkContainsN() == true) {
+                yHand.popNewHand();
+                yHand.askToKeepHand();
                 curTurn++;
             }
+
             yHand.sortHand();
             System.out.print("Your sorted hand is: ");
             yHand.displayHand();
-            System.out.print('\n');
+            System.out.println('\n');
 
             //scoring begins:
             Score.totalOfEachNumScore();

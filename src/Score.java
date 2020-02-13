@@ -8,7 +8,9 @@
  * @author Bailey Stone
  * @version v1.0 2/3/2020
  */
+//make hashCode or hashTbl
 //TODO change for more die sides
+
 public class Score {
     /**
      * Totals the quantity of each number of the die and outputs the score
@@ -26,11 +28,11 @@ public class Score {
         }
     }
 
+    //lower scorecard
     /**
      * Totals the value of the final hand of die
      * @return the sum of the final hand of die
      */
-    //lower scorecard
     public static int totalAllDice() {
         int total = 0;
         for (int i = 0; i < Hand.numDie; i++)
@@ -44,7 +46,6 @@ public class Score {
      * @return 0 if there is no full house, 25 if a full house was found
      */
     public static int findFullHouse() {
-        boolean fullHouse = false;
         int count;
         boolean twoCount = false;
         boolean threeCount = false;
@@ -79,7 +80,6 @@ public class Score {
     public static void findMaxOfAKind() {
         int count;
         int maxCount = 0;
-        int score;
 
         for (int i = 1; i <= Dice.max; i++) {
             count = 0;
@@ -143,22 +143,16 @@ public class Score {
      * iterates through final hand and looks for a yahtzee
      */
     public static void findYahtzee () {
-        boolean yahtzee = false;
         int num = Hand.dieArr.get(0);
         int count = 0;
 
         for (int i = 0; i < Hand.numDie; i++) {
-            if (Hand.dieArr.get(i) == num) {
+            if (Hand.dieArr.get(i) == num)
                 count++;
-            }
-            else {
-                yahtzee = false;
-            }
         }
 
         if (count == Hand.numDie) {
             System.out.println("Score: 50 on the Yahtzee Line.");
-            yahtzee = true;
         }
         else  {
             System.out.println("Score: 0 on the Yahtzee Line.");

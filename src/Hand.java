@@ -25,40 +25,32 @@ import java.util.Scanner; // TODO: take out maybe
 
 public class Hand {
 
-    public int numN;
     public static String keepStr;
     public static int numDie = 5;//todo: change to file input
-    public static ArrayList<Integer> dieArr = new ArrayList(numDie);
+    public static ArrayList<Integer> dieArr = new ArrayList(numDie); //change to no size and use ensureCapacity() in construct
 
-    Hand() {
-        keepStr= "";
+    Hand() { //TODO: need a privacy?
+        keepStr = "";
+        numDie = 5; //TODO: read in
+
         //initialize handArr and keepArr
         for (int i = 0; i < numDie; i++) {
-            keepStr= keepStr+ 'n';
+            keepStr = keepStr + 'n';
             dieArr.add(i, Dice.rollDie());
         }
-        numN = numDie;
-    }
-
-    /**
-     * Initializes keep to an array of all 'n' at the beginning of each turn
-     */
-    public void initHand() {
-        keepStr= keepStr.replace('y','n');
-        numN = numDie;
     }
 
     /**
      * Rolls a new hand if the keep array in same index is 'n' and then stores the new value in indexed
      * position of array list.
      */
-    public void newHand() {
+    public void popNewHand() {
 
-        System.out.print("Your roll was: ");
         for (int i = 0; i < numDie; i++) {
             if (keepStr.charAt(i) == 'n')
                 dieArr.set(i, Dice.rollDie());
         }
+        System.out.print("Your roll was: ");
         displayHand();
         System.out.print("\n");
     }
@@ -66,24 +58,23 @@ public class Hand {
     /**
      * Prompts user to enter which die to keep and load them into the keep arrayList
      */
-    public void keepHand() { //TODO should this be in yahtzee?
+    public static void askToKeepHand() { //TODO should this be in yahtzee?
         Scanner toKeepSc = new Scanner(System.in);
-        int tempN = 0;
 
         //TODO: MOVE TO YAHTZEE FUNCTION???
-        if (YahtzeeTester.curTurn < YahtzeeTester.maxTurns - 1) { //might need later for scoring
+        if (YahtzeeTester.curTurn < YahtzeeTester.maxTurns) { //might need later for scoring
             System.out.print("Enter dice to keep (y or n): ");
-            keepStr= toKeepSc.nextLine();
+            keepStr = toKeepSc.nextLine();
             System.out.print('\n');
         }
+    }
 
-
-        //calcs number of n for while loop control
-        for(int i = 0; i < numDie; i++) {
-            if (keepStr.charAt(i) == 'n')
-                tempN++;
-        }
-        numN = tempN;
+    /**
+     *
+     * @return
+     */
+    public static boolean checkContainsN() {
+        return keepStr.contains("n");
     }
 
     /**
@@ -92,7 +83,7 @@ public class Hand {
      * the first and second re-roll and sorts and pushes all kept die (now in descending order) to the front of the
      * hand array for viewing ease.
      */
-    public void sortHand() {
+    public static void sortHand() {
         for (int i = 0; i < numDie; i++) {
             for (int j = 0; j < numDie - i - 1; j++) {
                 if (dieArr.get(j) > dieArr.get(j + 1)) {
@@ -107,7 +98,7 @@ public class Hand {
     /**
      * Displays the hand array which contains the die values
      */
-    public void displayHand() {
+    public static void displayHand() {
         for (int i = 0; i < numDie; i++)
             System.out.print(dieArr.get(i) + " ");
     }
