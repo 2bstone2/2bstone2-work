@@ -37,12 +37,12 @@ public class YahtzeeTester {
             System.out.print('\n');
 
             //scoring begins:
-            yScore.totalOfEachNumScore();
-            yScore.findMaxOfAKind();
-            yScore.findFullHouse();
-            yScore.findMaxStraight();
-            yScore.findYahtzee();
-            System.out.println("Score: " + yScore.totalAllDice() + " on the Chance line.");
+            Score.totalOfEachNumScore();
+            Score.findMaxOfAKind();
+            Score.findFullHouse();
+            Score.findMaxStraight();
+            Score.findYahtzee();
+            System.out.println("Score: " + Score.totalAllDice() + " on the Chance line.");
 
             yHand.playAgain = yHand.askToPlayAgain(); //after turn
         }
