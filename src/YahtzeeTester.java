@@ -15,8 +15,10 @@
 import java.util.Scanner;
 
 public class YahtzeeTester {
-    public static int maxTurns = 3; //TODO: read in from file
+    public static int maxTurns; //TODO: read in from file
     public static int curTurn;
+    static ConfigFile yahtzeeConfig = new ConfigFile(); //maybe can move to readYahtzeeConfig;
+   // static Hand yHand = new Hand();
 
     /*Yahtzee() { //TODO: need this constructor??
         maxTurns = 3; //TODO: read in from file
@@ -27,11 +29,16 @@ public class YahtzeeTester {
      */
     public static void main(String[] args) {
 
-        Hand yHand = new Hand();
         Dice yahtzee = new Dice();
+
         char playAgain = 'y';
         // int curTurn; //TODO: pass into eventually if needed maybe?
 
+        //begin game, prompt change of vals
+
+        readYahtzeeConfig();
+        promptConfigChange();
+        Hand yHand = new Hand();
         //turn loop
         while(playAgain != 'n') {
             curTurn = 1; //TODO: ?ok to have in main?.. need a function?
@@ -39,7 +46,7 @@ public class YahtzeeTester {
             yHand.keepStr = yHand.keepStr.replace('y','n'); //TODO: make a function?
 
             //number of rounds control loop
-            while (curTurn <= maxTurns && yHand.checkContainsN() == true) {
+            while (curTurn <= maxTurns && yHand.checkContainsN()) {
                 yHand.popNewHand();
                 yHand.askToKeepHand();
                 curTurn++;
@@ -62,6 +69,34 @@ public class YahtzeeTester {
         }
     }
 
+    public static void readYahtzeeConfig() {
+        yahtzeeConfig.readFromFile();
+
+       Dice.numSides = yahtzeeConfig.configArr.get(0);
+       Hand.numDie = yahtzeeConfig.configArr.get(1);
+       maxTurns = yahtzeeConfig.configArr.get(2);
+    }
+
+    public static void promptConfigChange() {
+        Scanner configChangeSc = new Scanner(System.in);
+        char changeConfig;
+
+        System.out.println("You are playing with " + Hand.numDie + " " + Dice.numSides + "-sided dice");
+        System.out.println("You get " + maxTurns + " rolls per hand");
+
+        System.out.print("\nEnter 'y' to change the configuration or 'n' to continue to the game: ");
+        changeConfig = configChangeSc.next().charAt(0);
+        System.out.print('\n');
+
+       if (changeConfig == 'y') {
+           yahtzeeConfig.changeConfig();
+           readYahtzeeConfig(); //re initializes values
+          // System.out.println("reinit check: numDie")
+
+       }
+
+    }
+
     /**
      * Prompts the user to play again when either the number of current rounds reaches the maximum amount, or
      * when the user wants to keep all of their dice.
@@ -71,8 +106,9 @@ public class YahtzeeTester {
         char userAns;
         Scanner playAgainSc = new Scanner(System.in);
 
-        System.out.println("\nEnter 'y' to play again or 'n' ");
+        System.out.print("\nEnter 'y' to play again or 'n' to exit: ");
         userAns = playAgainSc.next().charAt(0);
+        System.out.print('\n');
 
         if (userAns != 'y')
             System.exit(0);

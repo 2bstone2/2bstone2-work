@@ -11,17 +11,17 @@
 import java.util.Random;
 
 public class Dice {
-    public static int min;
-    public static int max;
+    //public static int min;
+    public static int numSides;
 
     Dice() {
-        min = 1; //TODO read in
-        max = 6; //TODO read in and adjust index
+        //min = 1; //TODO read in
+        numSides = 6; //TODO read in and adjust index
     }
 
     public static int rollDie(){
        Random dieVal = new Random();
 
-       return dieVal.ints(1, min, max + 1).findFirst().getAsInt();
+       return dieVal.ints(1, 1, numSides + 1).findFirst().getAsInt();
     }
 }

@@ -10,7 +10,7 @@
  * @author Bailey Stone
  * @version v1.0 2/3/2020
  *
- */
+ **/
 /*
 TODO:
 - change dieArr.get() just to the index
@@ -21,17 +21,17 @@ TODO:
 */
 
 import java.util.ArrayList;
-import java.util.Scanner; // TODO: take out maybe
+import java.util.Scanner; // TODO: take out maybe if keepHand() goes to yahtzeeTester
 
 public class Hand {
 
+    //TODO: is this a field?
     public static String keepStr;
-    public static int numDie = 5;//todo: change to file input
+    public static int numDie; //TODO should this be in here or construct.
     public static ArrayList<Integer> dieArr = new ArrayList(numDie); //change to no size and use ensureCapacity() in construct
 
     Hand() { //TODO: need a privacy?
         keepStr = "";
-        numDie = 5; //TODO: read in
 
         //initialize handArr and keepArr
         for (int i = 0; i < numDie; i++) {

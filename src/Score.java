@@ -18,7 +18,7 @@ public class Score {
     //upper scorecard
     public static void totalOfEachNumScore() {
 
-        for (int i = Dice.min; i <= Dice.max; i++) {
+        for (int i = 1; i <= Dice.numSides; i++) {
             int count = 0;
             for (int j = 0; j < Hand.numDie; j++) {
                 if (Hand.dieArr.get(j) == i)
@@ -50,7 +50,7 @@ public class Score {
         boolean twoCount = false;
         boolean threeCount = false;
 
-        for (int i = 1; i <= Dice.max; i++) {
+        for (int i = 1; i <= Dice.numSides; i++) {
             count = 0;
             for (int j = 0; j < Hand.numDie; j++) {
                 if (Hand.dieArr.get(j) == i)
@@ -81,7 +81,7 @@ public class Score {
         int count;
         int maxCount = 0;
 
-        for (int i = 1; i <= Dice.max; i++) {
+        for (int i = 1; i <= Dice.numSides; i++) {
             count = 0;
             for (int j = 0; j < Hand.numDie; j++) {
                 if (Hand.dieArr.get(j) == i)
