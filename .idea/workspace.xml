@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a49d1198-03b6-42e6-a70f-da62f9756b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConfigFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yahtzeeConfig.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Dice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Hand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Hand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Score.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConfigFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConfigFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Score.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/YahtzeeTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/YahtzeeTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yahtzeeConfig.txt" beforeDir="false" afterPath="$PROJECT_DIR$/yahtzeeConfig.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,9 +85,25 @@
       <option name="presentableId" value="Default" />
       <updated>1579727619727</updated>
     </task>
+    <task id="LOCAL-00001" summary="&quot;Add config class, file io, change vals&quot;">
+      <created>1581661056752</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581661056753</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;Add config class, file io, change vals&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Add config class, file io, change vals&quot;" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="240" y="65" width="800" height="717" key="#Intentions" timestamp="1581678417663">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="65" width="800" height="717" key="#Intentions/0.0.1280.800@0.0.1280.800" timestamp="1581678417663" />
     <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580774354843">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -103,29 +116,29 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1581657608981" />
-    <state x="273" y="2" key="CommitChangelistDialog2" timestamp="1581660921271">
+    <state x="273" y="2" key="CommitChangelistDialog2" timestamp="1581661056352">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="273" y="2" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1581660921271" />
-    <state width="1238" height="183" key="GridCell.Tab.0.bottom" timestamp="1581661023188">
+    <state x="273" y="2" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1581661056352" />
+    <state width="1238" height="183" key="GridCell.Tab.0.bottom" timestamp="1581678763905">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="183" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1581661023188" />
+    <state width="1238" height="183" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1581678763905" />
     <state width="1238" height="263" key="GridCell.Tab.0.bottom/0.23.1280.715@0.23.1280.715" timestamp="1580788379587" />
-    <state width="1238" height="183" key="GridCell.Tab.0.center" timestamp="1581661023185">
+    <state width="1238" height="183" key="GridCell.Tab.0.center" timestamp="1581678763903">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="183" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1581661023185" />
+    <state width="1238" height="183" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1581678763903" />
     <state width="1238" height="263" key="GridCell.Tab.0.center/0.23.1280.715@0.23.1280.715" timestamp="1580788379585" />
-    <state width="1238" height="183" key="GridCell.Tab.0.left" timestamp="1581661023183">
+    <state width="1238" height="183" key="GridCell.Tab.0.left" timestamp="1581678763902">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="183" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1581661023183" />
+    <state width="1238" height="183" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1581678763902" />
     <state width="1238" height="263" key="GridCell.Tab.0.left/0.23.1280.715@0.23.1280.715" timestamp="1580788379581" />
-    <state width="1238" height="183" key="GridCell.Tab.0.right" timestamp="1581661023187">
+    <state width="1238" height="183" key="GridCell.Tab.0.right" timestamp="1581678763904">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="183" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1581661023187" />
+    <state width="1238" height="183" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1581678763904" />
     <state width="1238" height="263" key="GridCell.Tab.0.right/0.23.1280.715@0.23.1280.715" timestamp="1580788379586" />
     <state width="1238" height="263" key="GridCell.Tab.1.bottom" timestamp="1580788379591">
       <screen x="0" y="23" width="1280" height="715" />
@@ -155,10 +168,10 @@
       <screen x="0" y="23" width="1280" height="696" />
     </state>
     <state x="319" y="203" key="com.intellij.ide.util.TipDialog/0.23.1280.696@0.23.1280.696" timestamp="1581288834206" />
-    <state x="429" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581660841656">
+    <state x="429" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581661079039">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="429" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1581660841656" />
+    <state x="429" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1581661079039" />
     <state x="0" y="0" width="816" height="800" key="find.popup" timestamp="1581586621842">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

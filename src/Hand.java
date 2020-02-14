@@ -13,7 +13,6 @@
  **/
 /*
 TODO:
-- change dieArr.get() just to the index
 - to yahtzeeTest
     - when to get the ones to keep function
 
@@ -24,8 +23,6 @@ import java.util.ArrayList;
 import java.util.Scanner; // TODO: take out maybe if keepHand() goes to yahtzeeTester
 
 public class Hand {
-
-    //TODO: is this a field?
     public static String keepStr;
     public static int numDie; //TODO should this be in here or construct.
     public static ArrayList<Integer> dieArr = new ArrayList(numDie); //change to no size and use ensureCapacity() in construct
@@ -45,7 +42,6 @@ public class Hand {
      * position of array list.
      */
     public void popNewHand() {
-
         for (int i = 0; i < numDie; i++) {
             if (keepStr.charAt(i) == 'n')
                 dieArr.set(i, Dice.rollDie());
@@ -66,6 +62,19 @@ public class Hand {
             System.out.print("Enter dice to keep (y or n): ");
             keepStr = toKeepSc.nextLine();
             System.out.print('\n');
+        }
+
+        //input checks
+        if (keepStr.length() != numDie) {
+            System.out.println("Please enter a correct input");
+            askToKeepHand();
+        }
+
+        for(int i = 0; i < keepStr.length(); i++) {
+            if (keepStr.charAt(i) != 'y' && keepStr.charAt(i) != 'n') {
+                System.out.println("Please enter a correct input");
+                askToKeepHand();
+            }
         }
     }
 

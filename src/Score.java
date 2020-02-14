@@ -8,21 +8,20 @@
  * @author Bailey Stone
  * @version v1.0 2/3/2020
  */
-//make hashCode or hashTbl
-//TODO change for more die sides
-
 public class Score {
+
+    //upper scorecard
     /**
      * Totals the quantity of each number of the die and outputs the score
      */
-    //upper scorecard
     public static void totalOfEachNumScore() {
 
         for (int i = 1; i <= Dice.numSides; i++) {
             int count = 0;
             for (int j = 0; j < Hand.numDie; j++) {
-                if (Hand.dieArr.get(j) == i)
+                if (Hand.dieArr.get(j) == i) {
                     count++;
+                }
             }
             System.out.println("Score: " + count*i + " on the " + i + " line.");
         }
@@ -47,24 +46,40 @@ public class Score {
      */
     public static int findFullHouse() {
         int count;
-        boolean twoCount = false;
-        boolean threeCount = false;
+        int lowCount;
+        int highCount;
+        boolean lowCountBool = false;
+        boolean highCountBool = false;
+
+        //get low and high count values for variable numDie
+        if (Hand.numDie % 2 == 0) {
+            highCount = (Hand.numDie/2);
+        }
+        else {
+            highCount = (Hand.numDie/2) + 1;
+        }
+        lowCount = Hand.numDie/2;
 
         for (int i = 1; i <= Dice.numSides; i++) {
             count = 0;
             for (int j = 0; j < Hand.numDie; j++) {
-                if (Hand.dieArr.get(j) == i)
+                if (Hand.dieArr.get(j) == i) {
                     count++;
+                }
             }
-            if (count == 2) {
-                twoCount = true;
+            if (lowCount == highCount && count == lowCount || count == Hand.numDie) {
+                lowCountBool = true;
+                highCountBool = true;
             }
-            else if (count == 3) {
-                threeCount = true;
+            else if (lowCount != highCount && count == lowCount) {
+                lowCountBool = true;
+            }
+            else if (lowCount != highCount && count == highCount) {
+                highCountBool = true;
             }
         }
 
-        if (twoCount && threeCount) {
+        if (lowCountBool && highCountBool) {
             System.out.println("Score: 25 on the Full House line.");
             return 25;
         }
@@ -80,29 +95,33 @@ public class Score {
     public static void findMaxOfAKind() {
         int count;
         int maxCount = 0;
+        int lowCount = Hand.numDie - 2;
+        int highCount = Hand.numDie - 1;
 
         for (int i = 1; i <= Dice.numSides; i++) {
             count = 0;
             for (int j = 0; j < Hand.numDie; j++) {
-                if (Hand.dieArr.get(j) == i)
+                if (Hand.dieArr.get(j) == i) {
                     count++;
+                }
             }
-            if (count > maxCount)
+            if (count > maxCount) {
                 maxCount = count;
+            }
         }
 
-            if (maxCount == 3) {
-                System.out.println("Score: " + totalAllDice() + " on the 3 of a Kind Line." );
-                System.out.println("Score: 0 on the 4 of a Kind Line.");
-            }
-            else if (maxCount >= 4) {
-                System.out.println("Score: " + totalAllDice() + " on the 3 of a Kind Line." );
-                System.out.println("Score: " + totalAllDice() + " on the 4 of a Kind Line.");
-            }
-            else {
-                System.out.println("Score: 0 on the 3 of a Kind Line.");
-                System.out.println("Score: 0 on the 4 of a Kind Line.");
-            }
+        if (maxCount == lowCount) {
+            System.out.println("Score: " + totalAllDice() + " on the small of a Kind Line." );
+            System.out.println("Score: 0 on the large of a Kind Line.");
+        }
+        else if (maxCount >= highCount) {
+            System.out.println("Score: " + totalAllDice() + " on the small of a Kind Line." );
+            System.out.println("Score: " + totalAllDice() + " on the large of a Kind Line.");
+        }
+        else {
+            System.out.println("Score: 0 on the small of a Kind Line.");
+            System.out.println("Score: 0 on the large of a Kind Line.");
+        }
     }
 
     /**
@@ -112,6 +131,8 @@ public class Score {
     public static void findMaxStraight() {
         int curCount = 1;
         int maxCount = 1;
+        int lowStraight = Hand.numDie - 1;
+        int highStraight = Hand.numDie;
 
         for(int i = 0; i < Hand.numDie - 1; i++) {
             if (Hand.dieArr.get(i) + 1 == Hand.dieArr.get(i + 1)) {
@@ -125,11 +146,11 @@ public class Score {
                 maxCount = curCount;
         }
 
-        if (maxCount == 4) {
+        if (maxCount == lowStraight) {
             System.out.println("Score: " + totalAllDice() + " on the Small Straight Line.");
             System.out.println("Score: 0 on the Large Straight Line.");
         }
-        else if (maxCount == 5) {
+        else if (maxCount == highStraight) {
             System.out.println("Score: " + totalAllDice() + " on the Small Straight Line.");
             System.out.println("Score: " + totalAllDice() + " on the Large Straight Line.");
         }

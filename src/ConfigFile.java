@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class ConfigFile {
     public static ArrayList<Integer> configArr = new ArrayList(3);
-    //public static Scanner inFile = new Scanner(System.in);
 
     public static void readFromFile () {
         int i = 0;
@@ -47,6 +46,8 @@ public class ConfigFile {
 
         System.out.print("Enter the number of rolls per hand : ");
         configArr.set(2, configSc.nextInt());
+
+        System.out.print('\n');
 
         writeToFile();
     }
