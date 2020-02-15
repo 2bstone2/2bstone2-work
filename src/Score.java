@@ -2,11 +2,11 @@
  * This program controls the scoring for the game once the final hand is reached.
  *
  * CPSC 224-01 Spring 2020
- * HW #1
+ * HW #2
  * No sources to cite;
  *
  * @author Bailey Stone
- * @version v1.0 2/3/2020
+ * @version v2.0 2/14/2020
  */
 public class Score {
 

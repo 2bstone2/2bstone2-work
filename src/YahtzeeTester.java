@@ -1,16 +1,15 @@
 /**
- *This program is the beginning of a yahtzee program and takes in user input to keep or reroll dice. The player will
+ *This program is the beginning of a yahtzee program and takes in user input to change the configuration, keep or reroll dice. The player will
  * see their scorecard and then be prompted to play again once their turn is over or they would like to keep all of
  * their dice in the dieArr
- *CPSC 224-01 Spring 2020
- * HW #1
+ * CPSC 224-01 Spring 2020
+ * HW #2
  * No sources to cite;
  *
- * @author Bailey Stone
- * @version v1.0 2/3/2020
- * @see no borrowed code
+ * Bailey Stone
+ * @author bstone
+ * @version v2.0 2/14/2020
  */
-//TODO: fix name to yahtzee
 
 import java.util.Scanner;
 
@@ -25,7 +24,8 @@ public class YahtzeeTester {
     }*/
 
     /**
-     * Yahtzee Tester drives the Yahtzee program by making use of classes Dice, Hand and Score
+     * Yahtzee Tester drives the Yahtzee program by making use of classes Dice, Hand, Score, and ConfigFile
+     * @param args doesnt get used
      */
     public static void main(String[] args) {
         Dice yahtzee = new Dice();
@@ -38,9 +38,9 @@ public class YahtzeeTester {
 
         //turn loop
         while(playAgain != "n") {
-            curTurn = 1; //TODO: ?ok to have in main?.. need a function?
+            curTurn = 1;
 
-            yHand.keepStr = yHand.keepStr.replace('y','n'); //TODO: make a function?
+            yHand.keepStr = yHand.keepStr.replace('y','n');
 
             //number of rounds control loop
             while (curTurn <= maxTurns && yHand.checkContainsN()) {
@@ -66,6 +66,11 @@ public class YahtzeeTester {
         }
     }
 
+    /**
+     * This program prompts the config fig to be read and updates values of Dice.numSides, Hand.numDie and maxTurns
+     * @see Hand
+     * @see Dice
+     */
     public static void readYahtzeeConfig() {
         yahtzeeConfig.readFromFile();
 
@@ -74,6 +79,10 @@ public class YahtzeeTester {
         maxTurns = yahtzeeConfig.configArr.get(2);
     }
 
+    /**
+     * displays the current settings of the game from the configFile and asks the user if they want to change
+     * the settings. If yes, then user inputs their new settings. If no, then the user continues to the game
+     */
     public static void promptConfigChange() {
         Scanner configChangeSc = new Scanner(System.in);
         String changeConfig;

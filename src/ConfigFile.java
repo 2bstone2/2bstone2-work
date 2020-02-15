@@ -1,3 +1,14 @@
+/**
+ * This program reads from an input file, can change the input file, then write to the file
+ * CPSC 224-01 Spring 2020
+ * HW #2
+ * No sources to cite;
+ *
+ * Bailey Stone
+ * @author bstone
+ * @version v2.0 2/14/2020
+ */
+
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -7,6 +18,9 @@ import java.util.ArrayList;
 public class ConfigFile {
     public static ArrayList<Integer> configArr = new ArrayList(3);
 
+    /**
+     * Reads from an input file and assigns values to configArr which holds the values to be updated later on
+     */
     public static void readFromFile () {
         int i = 0;
 
@@ -22,6 +36,10 @@ public class ConfigFile {
         }
     }
 
+    /**
+     * Writes to the file if the user wants to change the game settings
+     */
+
     public static void writeToFile() {
         try {
             PrintStream outFile = new PrintStream(String.valueOf("yahtzeeConfig.txt"));
@@ -34,7 +52,9 @@ public class ConfigFile {
         }
     }
 
-
+    /**
+     * gets the new config settings and calls to write them to the input file
+     */
     public static void changeConfig() {
         Scanner configSc = new Scanner(System.in);
 

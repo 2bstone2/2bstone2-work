@@ -20,14 +20,14 @@ TODO:
 */
 
 import java.util.ArrayList;
-import java.util.Scanner; // TODO: take out maybe if keepHand() goes to yahtzeeTester
+import java.util.Scanner; //take out maybe if keepHand() goes to yahtzeeTester
 
 public class Hand {
     public static String keepStr;
-    public static int numDie; //TODO should this be in here or construct.
+    public static int numDie;
     public static ArrayList<Integer> dieArr = new ArrayList(numDie); //change to no size and use ensureCapacity() in construct
 
-    Hand() { //TODO: need a privacy?
+    Hand() {
         keepStr = "";
 
         //initialize handArr and keepArr
@@ -54,10 +54,9 @@ public class Hand {
     /**
      * Prompts user to enter which die to keep and load them into the keep arrayList
      */
-    public static void askToKeepHand() { //TODO should this be in yahtzee?
+    public static void askToKeepHand() { //should this be in yahtzee?
         Scanner toKeepSc = new Scanner(System.in);
 
-        //TODO: MOVE TO YAHTZEE FUNCTION???
         if (YahtzeeTester.curTurn < YahtzeeTester.maxTurns) { //might need later for scoring
             System.out.print("Enter dice to keep (y or n): ");
             keepStr = toKeepSc.nextLine();
@@ -79,8 +78,8 @@ public class Hand {
     }
 
     /**
-     *
-     * @return
+     * checks if keepStr contains the letter n
+     * @return true if keepStr contains n, false if it does not
      */
     public static boolean checkContainsN() {
         return keepStr.contains("n");
