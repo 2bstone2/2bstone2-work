@@ -46,12 +46,15 @@ public class YahtzeeTester {
 
         
         readYahtzeeConfig();
-        promptConfigChange();
+        //promptConfigChange();
 
+        //yFrame = new YahtzeeGUI();
+        new YahtzeeGUI();
         yahtzee = new Dice(yahtzee.numSides);
         yHand = new Hand();
+        //yFrame = new YahtzeeGUI();
         yahtzeeSC = new Scorecard(yahtzee.numSides);
-       yFrame = new YahtzeeGUI();
+
         //yConfigFrame = new YahtzeeGUI.ConfigMenu();
 
 

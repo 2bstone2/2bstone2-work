@@ -41,7 +41,7 @@ public class Hand {
      * Rolls a new hand if the keep array in same index is 'n' and then stores the new value in indexed
      * position of array list.
      */
-    public void popNewHand() {
+    public static void popNewHand() {
         for (int i = 0; i < numDie; i++) {
             if (keepStr.charAt(i) == 'n')
                 dieArr.set(i, Dice.rollDie());

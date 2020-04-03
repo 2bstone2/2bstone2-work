@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a49d1198-03b6-42e6-a70f-da62f9756b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Scorecard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/YahtzeeGUI.java" afterDir="false" />
+    <list default="true" id="a49d1198-03b6-42e6-a70f-da62f9756b7f" name="Default Changelist" comment="GUI start">
+      <change afterPath="$PROJECT_DIR$/Dice_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dice_9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dice_9.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/ConfigFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/ConfigFile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Dice.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Dice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Hand.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Hand.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Score.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Score.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/YahtzeeTester.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/YahtzeeTester.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/ConfigFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ConfigFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Dice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Hand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Hand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Score.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConfigFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConfigFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scorecard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scorecard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/YahtzeeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/YahtzeeGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/YahtzeeTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/YahtzeeTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yahtzeeConfig.txt" beforeDir="false" afterPath="$PROJECT_DIR$/yahtzeeConfig.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +63,28 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.YahtzeeTester">
     <configuration name="Dice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Dice" />
       <module name="Yahtzee" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Stone_Assignment7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stone_assignment7.Stone_Assignment7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stone_assignment7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -80,6 +99,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.YahtzeeTester" />
+        <item itemvalue="Application.Stone_Assignment7" />
         <item itemvalue="Application.Dice" />
       </list>
     </recent_temporary>
@@ -114,22 +134,38 @@
       <option name="project" value="LOCAL" />
       <updated>1581661056753</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="GUI start">
+      <created>1585878897895</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585878897895</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Add config class, file io, change vals&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Add config class, file io, change vals&quot;" />
+    <MESSAGE value="GUI start" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI start" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="240" y="65" key="#Images" timestamp="1585904974997">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="65" key="#Images/0.0.1280.800@0.0.1280.800" timestamp="1585904974997" />
     <state x="240" y="65" width="800" height="717" key="#Intentions" timestamp="1581678417663">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="65" width="800" height="717" key="#Intentions/0.0.1280.800@0.0.1280.800" timestamp="1581678417663" />
-    <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580774354843">
+    <state x="324" y="65" key="#Stone_Assignment7" timestamp="1585903186938">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1580774354843" />
+    <state x="324" y="65" key="#Stone_Assignment7/0.0.1280.800@0.0.1280.800" timestamp="1585903186938" />
+    <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585901571169">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1585901571169" />
     <state x="372" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581657525299">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -142,29 +178,29 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1581657608981" />
-    <state x="273" y="2" key="CommitChangelistDialog2" timestamp="1585878860561">
+    <state x="273" y="2" key="CommitChangelistDialog2" timestamp="1585906462167">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="273" y="2" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1585878860560" />
-    <state width="1238" height="252" key="GridCell.Tab.0.bottom" timestamp="1585878860622">
+    <state x="273" y="2" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1585906462167" />
+    <state width="1238" height="96" key="GridCell.Tab.0.bottom" timestamp="1585915125767">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="252" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1585878860622" />
+    <state width="1238" height="96" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1585915125767" />
     <state width="1238" height="252" key="GridCell.Tab.0.bottom/0.23.1280.715@0.23.1280.715" timestamp="1582944248690" />
-    <state width="1238" height="252" key="GridCell.Tab.0.center" timestamp="1585878860621">
+    <state width="1238" height="96" key="GridCell.Tab.0.center" timestamp="1585915125765">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="252" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1585878860621" />
+    <state width="1238" height="96" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1585915125765" />
     <state width="1238" height="252" key="GridCell.Tab.0.center/0.23.1280.715@0.23.1280.715" timestamp="1582944248688" />
-    <state width="1238" height="252" key="GridCell.Tab.0.left" timestamp="1585878860620">
+    <state width="1238" height="96" key="GridCell.Tab.0.left" timestamp="1585915125765">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="252" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1585878860620" />
+    <state width="1238" height="96" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1585915125765" />
     <state width="1238" height="252" key="GridCell.Tab.0.left/0.23.1280.715@0.23.1280.715" timestamp="1582944248687" />
-    <state width="1238" height="252" key="GridCell.Tab.0.right" timestamp="1585878860621">
+    <state width="1238" height="96" key="GridCell.Tab.0.right" timestamp="1585915125766">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="252" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1585878860621" />
+    <state width="1238" height="96" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1585915125766" />
     <state width="1238" height="252" key="GridCell.Tab.0.right/0.23.1280.715@0.23.1280.715" timestamp="1582944248689" />
     <state width="1238" height="263" key="GridCell.Tab.1.bottom" timestamp="1580788379591">
       <screen x="0" y="23" width="1280" height="715" />
@@ -209,9 +245,9 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="402" y="23" key="refactoring.ChangeSignatureDialog/0.0.1280.800@0.0.1280.800" timestamp="1582866689510" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1585870591986">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1585913696177">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1585870591986" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1585913696177" />
   </component>
 </project>

@@ -25,6 +25,8 @@ public class Scorecard {
         sizeSC = numSides + 7;
         cardList.ensureCapacity(sizeSC);
         possList.ensureCapacity(sizeSC);
+        writeScoreFile("scorecard.txt");
+        storePossiblePlaces();
     }
 
     /**
@@ -106,16 +108,15 @@ public class Scorecard {
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
-        storePossiblePlaces("scorecard.txt");
+        storePossiblePlaces();
     }
 
     /**
      * populates possLines from cardList
-     * @param fileName
      */
 
     //put in scoring here
-    public static void storePossiblePlaces(String fileName) { //basically same as readfile but only read if n
+    public static void storePossiblePlaces() { //basically same as readfile but only read if n
         int[] tempArr = new int [2];
         int i;
         int idx = 0;
@@ -125,7 +126,7 @@ public class Scorecard {
         possList.clear();
 
         try {
-            inFile = new Scanner(new File(fileName));
+            inFile = new Scanner(new File("scorecard.txt"));
 
             for(i = 0; i < Dice.numSides; i++) {
                 ArrayList<String> lineList = new ArrayList<String>(2);
@@ -208,7 +209,7 @@ public class Scorecard {
         int i;
         int j = 0;
 
-        storePossiblePlaces("scorecard.txt");
+        storePossiblePlaces();
 
         for(i = 0; i < sizeSC - numY; i++) {
             if (possList.get(i).get(0).equals(name)) {
@@ -227,7 +228,7 @@ public class Scorecard {
         cardList.set(i,tempArr);
 
         writeScoreFile("scorecard.txt");
-        storePossiblePlaces("scorecard.txt");
+        storePossiblePlaces();
     }
 
     /**
@@ -238,7 +239,7 @@ public class Scorecard {
         String keepAns = "";
         Scanner keepAnsSc = new Scanner(System.in);
 
-        storePossiblePlaces("scorecard.txt");
+        storePossiblePlaces();
         System.out.println("Here are your available scorecard lines:");
         displayPossLines();
 
@@ -332,7 +333,7 @@ public class Scorecard {
         String name = "";
         int size = sizeSC - numY;
 
-        storePossiblePlaces("scorecard.txt");
+        storePossiblePlaces();
 
 
         //make sure change card list is called before this
