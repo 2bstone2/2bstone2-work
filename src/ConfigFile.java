@@ -21,11 +21,11 @@ public class ConfigFile {
     /**
      * Reads from an input file and assigns values to configArr which holds the values to be updated later on
      */
-    public static void readFromFile () {
+    public static void readFromFile (String inFileName) {
         int i = 0;
 
         try {
-           Scanner inFile = new Scanner(new File("yahtzeeConfig.txt"));
+           Scanner inFile = new Scanner(new File(inFileName));
             while (inFile.hasNextLine()) {
                 configArr.add(i, Integer.parseInt(inFile.nextLine()));
                 i++;
@@ -40,9 +40,9 @@ public class ConfigFile {
      * Writes to the file if the user wants to change the game settings
      */
 
-    public static void writeToFile() {
+    public static void writeToFile(String inFileName) {
         try {
-            PrintStream outFile = new PrintStream(String.valueOf("yahtzeeConfig.txt"));
+            PrintStream outFile = new PrintStream(String.valueOf(inFileName));
             for(int i = 0; i < configArr.size(); i++) {
                 outFile.println(configArr.get(i));
             }
@@ -55,7 +55,7 @@ public class ConfigFile {
     /**
      * gets the new config settings and calls to write them to the input file
      */
-    public static void changeConfig() {
+    public static void changeConfig(String inFileName) {
         Scanner configSc = new Scanner(System.in);
 
         System.out.print("Enter the number of sides on each dice : ");
@@ -69,6 +69,6 @@ public class ConfigFile {
 
         System.out.print('\n');
 
-        writeToFile();
+        writeToFile(inFileName);
     }
 }

@@ -8,23 +8,25 @@
  * @author Bailey Stone
  * @version v2.0 2/14/2020
  */
+
+import java.util.ArrayList;
+
+//TODO: make functions return a val so you can put that in the scorecard array
 public class Score {
 
     //upper scorecard
     /**
      * Totals the quantity of each number of the die and outputs the score
      */
-    public static void totalOfEachNumScore() {
+    public static int totalOfEachNumScore(int numCheck) {
+        int count = 0;
 
-        for (int i = 1; i <= Dice.numSides; i++) {
-            int count = 0;
-            for (int j = 0; j < Hand.numDie; j++) {
-                if (Hand.dieArr.get(j) == i) {
-                    count++;
-                }
+        for (int j = 0; j < Hand.numDie; j++) {
+            if (Hand.dieArr.get(j) == numCheck) {
+                count++;
             }
-            System.out.println("Score: " + count*i + " on the " + i + " line.");
         }
+        return count;
     }
 
     //lower scorecard
@@ -34,9 +36,9 @@ public class Score {
      */
     public static int totalAllDice() {
         int total = 0;
-        for (int i = 0; i < Hand.numDie; i++)
-            total+= Hand.dieArr.get(i);
-
+        for (int i = 0; i < Hand.numDie; i++) {
+            total += Hand.dieArr.get(i);
+        }
         return total;
     }
 
@@ -58,7 +60,7 @@ public class Score {
         else {
             highCount = (Hand.numDie/2) + 1;
         }
-        lowCount = Hand.numDie/2;
+        lowCount = Hand.numDie - highCount;
 
         for (int i = 1; i <= Dice.numSides; i++) {
             count = 0;
@@ -80,23 +82,21 @@ public class Score {
         }
 
         if (lowCountBool && highCountBool) {
-            System.out.println("Score: 25 on the Full House line.");
             return 25;
         }
-        else {
-            System.out.println("Score: 0 on the Full House line.");
             return 0;
-        }
     }
 
     /**
      * Searches the final hand for the highest recurrence of a number
+     * @return
      */
-    public static void findMaxOfAKind() {
+    public static int[] findMaxOfAKind() {
         int count;
         int maxCount = 0;
         int lowCount = Hand.numDie - 2;
         int highCount = Hand.numDie - 1;
+        int[] scoreArr = new int [2];
 
         for (int i = 1; i <= Dice.numSides; i++) {
             count = 0;
@@ -111,28 +111,30 @@ public class Score {
         }
 
         if (maxCount == lowCount) {
-            System.out.println("Score: " + totalAllDice() + " on the small of a Kind Line." );
-            System.out.println("Score: 0 on the large of a Kind Line.");
+            scoreArr[0] = totalAllDice();
+            scoreArr[1] = 0;
         }
         else if (maxCount >= highCount) {
-            System.out.println("Score: " + totalAllDice() + " on the small of a Kind Line." );
-            System.out.println("Score: " + totalAllDice() + " on the large of a Kind Line.");
+            scoreArr[0] = totalAllDice();
+            scoreArr[1] = totalAllDice();
         }
         else {
-            System.out.println("Score: 0 on the small of a Kind Line.");
-            System.out.println("Score: 0 on the large of a Kind Line.");
+            scoreArr[0] = 0;
+            scoreArr[1] = 0;
         }
+        return scoreArr;
     }
 
     /**
      * Iterates through final hand and looks for the longest straight
      */
 
-    public static void findMaxStraight() {
+    public static int[] findMaxStraight() {
         int curCount = 1;
         int maxCount = 1;
         int lowStraight = Hand.numDie - 1;
         int highStraight = Hand.numDie;
+        int[] straightArr = new int [2];
 
         for(int i = 0; i < Hand.numDie - 1; i++) {
             if (Hand.dieArr.get(i) + 1 == Hand.dieArr.get(i + 1)) {
@@ -147,23 +149,24 @@ public class Score {
         }
 
         if (maxCount == lowStraight) {
-            System.out.println("Score: " + totalAllDice() + " on the Small Straight Line.");
-            System.out.println("Score: 0 on the Large Straight Line.");
+            straightArr[0] = totalAllDice();
+            straightArr[1] = 0;
         }
         else if (maxCount == highStraight) {
-            System.out.println("Score: " + totalAllDice() + " on the Small Straight Line.");
-            System.out.println("Score: " + totalAllDice() + " on the Large Straight Line.");
+            straightArr[0] = totalAllDice();
+            straightArr[1] = totalAllDice();
         }
         else  {
-            System.out.println("Score: 0 on the Small Straight Line.");
-            System.out.println("Score: 0 on the Large Straight Line.");
+            straightArr[0] = 0;
+            straightArr[1] = 0;
         }
+        return straightArr;
     }
 
     /**
      * iterates through final hand and looks for a yahtzee
      */
-    public static void findYahtzee () {
+    public static int findYahtzee () {
         int num = Hand.dieArr.get(0);
         int count = 0;
 
@@ -172,11 +175,10 @@ public class Score {
                 count++;
         }
 
-        if (count == Hand.numDie) {
-            System.out.println("Score: 50 on the Yahtzee Line.");
+        if (count == Hand.numDie && Hand.dieArr.get(0) != 0) {
+            return 50;
         }
-        else  {
-            System.out.println("Score: 0 on the Yahtzee Line.");
-        }
+
+        return 0;
     }
 }

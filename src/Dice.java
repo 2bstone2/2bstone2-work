@@ -1,11 +1,11 @@
 /**
  *This program performs the re-roll functionality of the Yahtzee game and holds dice specific values.
  * CPSC 224-01 Spring 2020
- * HW #2
+ * HW #3
  * No sources to cite;
  *
  * @author Bailey Stone
- * @version v2.0 2/14/2020
+ * @version v2.0 2/28/2020
  */
 
 import java.util.Random;
@@ -13,8 +13,9 @@ import java.util.Random;
 public class Dice {
     public static int numSides;
 
-    Dice() {
-        numSides = 6; //TODO read in and adjust index
+    public Dice(int sides) {
+
+        numSides = sides;
     }
 
     public static int rollDie(){

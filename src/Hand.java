@@ -33,7 +33,7 @@ public class Hand {
         //initialize handArr and keepArr
         for (int i = 0; i < numDie; i++) {
             keepStr = keepStr + 'n';
-            dieArr.add(i, Dice.rollDie());
+            dieArr.add(i, 0);
         }
     }
 
@@ -58,9 +58,14 @@ public class Hand {
         Scanner toKeepSc = new Scanner(System.in);
 
         if (YahtzeeTester.curTurn < YahtzeeTester.maxTurns) { //might need later for scoring
-            System.out.print("Enter dice to keep (y or n): ");
+            System.out.print("Enter dice to keep (y or n) or 'S' to see your scorecard: ");
             keepStr = toKeepSc.nextLine();
             System.out.print('\n');
+        }
+
+        if(keepStr.equals("S")) {
+            Scorecard.displaySC();
+            return;
         }
 
         //input checks
