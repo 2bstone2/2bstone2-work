@@ -53,13 +53,13 @@ public class YahtzeeTester {
         yahtzee = new Dice(yahtzee.numSides);
         yHand = new Hand();
         //yFrame = new YahtzeeGUI();
-        yahtzeeSC = new Scorecard(yahtzee.numSides);
+        //yahtzeeSC = new Scorecard(yahtzee.numSides);
 
         //yConfigFrame = new YahtzeeGUI.ConfigMenu();
 
 
-        yahtzeeSC.createScoreFile("scorecard.txt");
-        yahtzeeSC.readScoreFile("scorecard.txt");
+        //yahtzeeSC.createScoreFile("scorecard.txt");
+        //yahtzeeSC.readScoreFile("scorecard.txt");
 
 
         //turn loop
@@ -67,7 +67,7 @@ public class YahtzeeTester {
             curTurn = 1;
 
             yHand.keepStr = yHand.keepStr.replace('y','n');
-
+            Scorecard.displayPossLines();
             //promptSeeSC();
             System.out.println("\nstarting a new hand\n");
 
@@ -75,6 +75,9 @@ public class YahtzeeTester {
             while (curTurn <= maxTurns && yHand.checkContainsN()) {
                 yHand.popNewHand();
                 yHand.askToKeepHand();
+                //check
+                System.out.println("inside displayposs lines check");
+                //Scorecard.storePossiblePlaces();
                 curTurn++;
             }
 

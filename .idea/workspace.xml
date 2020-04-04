@@ -1,35 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a49d1198-03b6-42e6-a70f-da62f9756b7f" name="Default Changelist" comment="GUI start">
-      <change afterPath="$PROJECT_DIR$/Dice_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dice_9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dice_9.jpg" afterDir="false" />
+    <list default="true" id="a49d1198-03b6-42e6-a70f-da62f9756b7f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/Hand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Hand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scorecard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scorecard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/YahtzeeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/YahtzeeGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/YahtzeeTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/YahtzeeTester.java" afterDir="false" />
@@ -141,13 +115,28 @@
       <option name="project" value="LOCAL" />
       <updated>1585878897895</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Die faces, SC button, roll button">
+      <created>1585937936942</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585937936943</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Die faces, SC button, roll button">
+      <created>1585938071965</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585938071965</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Add config class, file io, change vals&quot;" />
     <MESSAGE value="GUI start" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI start" />
+    <MESSAGE value="Die faces, SC button, roll button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Die faces, SC button, roll button" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="65" key="#Images" timestamp="1585904974997">
@@ -178,29 +167,33 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1581657608981" />
-    <state x="273" y="2" key="CommitChangelistDialog2" timestamp="1585937936472">
+    <state x="503" y="190" key="AndroidProcessChooserDialog" timestamp="1585977566211">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="273" y="2" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1585937936472" />
-    <state width="1238" height="96" key="GridCell.Tab.0.bottom" timestamp="1585915125767">
+    <state x="503" y="190" key="AndroidProcessChooserDialog/0.0.1280.800@0.0.1280.800" timestamp="1585977566211" />
+    <state x="273" y="2" key="CommitChangelistDialog2" timestamp="1585938071606">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="96" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1585915125767" />
+    <state x="273" y="2" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1585938071606" />
+    <state width="1238" height="154" key="GridCell.Tab.0.bottom" timestamp="1585977247671">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="154" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1585977247671" />
     <state width="1238" height="252" key="GridCell.Tab.0.bottom/0.23.1280.715@0.23.1280.715" timestamp="1582944248690" />
-    <state width="1238" height="96" key="GridCell.Tab.0.center" timestamp="1585915125765">
+    <state width="1238" height="154" key="GridCell.Tab.0.center" timestamp="1585977247669">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="96" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1585915125765" />
+    <state width="1238" height="154" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1585977247669" />
     <state width="1238" height="252" key="GridCell.Tab.0.center/0.23.1280.715@0.23.1280.715" timestamp="1582944248688" />
-    <state width="1238" height="96" key="GridCell.Tab.0.left" timestamp="1585915125765">
+    <state width="1238" height="154" key="GridCell.Tab.0.left" timestamp="1585977247667">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="96" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1585915125765" />
+    <state width="1238" height="154" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1585977247667" />
     <state width="1238" height="252" key="GridCell.Tab.0.left/0.23.1280.715@0.23.1280.715" timestamp="1582944248687" />
-    <state width="1238" height="96" key="GridCell.Tab.0.right" timestamp="1585915125766">
+    <state width="1238" height="154" key="GridCell.Tab.0.right" timestamp="1585977247670">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="96" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1585915125766" />
+    <state width="1238" height="154" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1585977247670" />
     <state width="1238" height="252" key="GridCell.Tab.0.right/0.23.1280.715@0.23.1280.715" timestamp="1582944248689" />
     <state width="1238" height="263" key="GridCell.Tab.1.bottom" timestamp="1580788379591">
       <screen x="0" y="23" width="1280" height="715" />
@@ -226,6 +219,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="149" y="23" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1581445370944" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1585938080026">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1585938080026" />
     <state x="319" y="203" key="com.intellij.ide.util.TipDialog" timestamp="1584922830752">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
@@ -245,9 +242,9 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="402" y="23" key="refactoring.ChangeSignatureDialog/0.0.1280.800@0.0.1280.800" timestamp="1582866689510" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1585913696177">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1585977575083">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1585913696177" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1585977575083" />
   </component>
 </project>

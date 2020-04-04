@@ -22,11 +22,20 @@ public class Scorecard {
     public static int numY = 0;
 
     Scorecard (int numSides) {
+        ArrayList<String> tempArr = new ArrayList<>();
+        tempArr.add("");
+        tempArr.add("");
         sizeSC = numSides + 7;
         cardList.ensureCapacity(sizeSC);
         possList.ensureCapacity(sizeSC);
+        createScoreFile("scorecard.txt");
+        readScoreFile("scorecard.txt");
         writeScoreFile("scorecard.txt");
-        storePossiblePlaces();
+        //storePossiblePlaces();
+
+        for(int i = 0; i < sizeSC; i++) {
+            possList.add(tempArr);
+        }
     }
 
     /**
@@ -108,7 +117,7 @@ public class Scorecard {
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
-        storePossiblePlaces();
+      //  storePossiblePlaces();
     }
 
     /**
@@ -123,6 +132,7 @@ public class Scorecard {
         numY = 0;
         Scanner inFile = null;
 
+        System.out.println("cleared");
         possList.clear();
 
         try {
@@ -137,7 +147,7 @@ public class Scorecard {
                 else if (cardList.get(i).get(1).equals("n")){
                     lineList.add(cardList.get(i).get(0));
                     lineList.add(String.valueOf(Score.totalOfEachNumScore(i+1)*(i+1)));
-                    possList.add(idx, lineList);
+                    possList.add(lineList);
                     idx++;
                 }
             }
@@ -153,45 +163,46 @@ public class Scorecard {
                         lineList.add(cardList.get(j).get(0));
                         tempArr = Score.findMaxOfAKind();
                         lineList.add(String.valueOf(tempArr[0]));
-                        possList.add(idx, lineList);
+                        possList.add(lineList);
                         idx++;
                     } else if (cardList.get(j).get(0).equals("4K") && cardList.get(j).get(1).equals("n")) {
                         tempArr = Score.findMaxOfAKind();
                         lineList.add(0, cardList.get(j).get(0));
                         lineList.add(1, String.valueOf(tempArr[1]));
-                        possList.add(idx, lineList);
+                        possList.add(lineList);
                         idx++;
                     } else if (cardList.get(j).get(0).equals("FH") && cardList.get(j).get(1).equals("n")) {
                         lineList.add(0, cardList.get(j).get(0));
                         lineList.add(1, String.valueOf(Score.findFullHouse()));
-                        possList.add(idx, lineList);
+                        possList.add(lineList);
                         idx++;
                     } else if (cardList.get(j).get(0).equals("SS") && cardList.get(j).get(1).equals("n")) {
                         tempArr = Score.findMaxStraight();
                         lineList.add(0, cardList.get(j).get(0));
                         lineList.add(1, String.valueOf(tempArr[0]));
-                        possList.add(idx,lineList);
+                        possList.add(lineList);
                         idx++;
                     } else if (cardList.get(j).get(0).equals("LS") && cardList.get(j).get(1).equals("n")) {
                         tempArr = Score.findMaxStraight();
                         lineList.add(0, cardList.get(j).get(0));
                         lineList.add(1, String.valueOf(tempArr[1]));
-                        possList.add(idx,lineList);
+                        possList.add(lineList);
                         idx++;
                     } else if (cardList.get(j).get(0).equals("Y") && cardList.get(j).get(1).equals("n")) {
                         lineList.add(0, cardList.get(j).get(0));
                         lineList.add(1, String.valueOf(Score.findYahtzee()));
-                        possList.add(idx,lineList);
+                        possList.add(lineList);
                         idx++;
                     } else if (cardList.get(j).get(0).equals("C") && cardList.get(j).get(1).equals("n")) {
-                        ;
                         lineList.add(0, cardList.get(j).get(0));
                         lineList.add(1, String.valueOf(Score.totalAllDice()));
-                        possList.add(idx,lineList);
+                        possList.add(lineList);
                         idx++;
                     }
                 }
             }
+            //possListcheck
+            //displayPossLines();
             inFile.close();
         } catch(FileNotFoundException e) {
             System.out.println("File not found");
@@ -209,7 +220,7 @@ public class Scorecard {
         int i;
         int j = 0;
 
-        storePossiblePlaces();
+        //storePossiblePlaces();
 
         for(i = 0; i < sizeSC - numY; i++) {
             if (possList.get(i).get(0).equals(name)) {
@@ -228,7 +239,7 @@ public class Scorecard {
         cardList.set(i,tempArr);
 
         writeScoreFile("scorecard.txt");
-        storePossiblePlaces();
+        //storePossiblePlaces();
     }
 
     /**
@@ -239,7 +250,7 @@ public class Scorecard {
         String keepAns = "";
         Scanner keepAnsSc = new Scanner(System.in);
 
-        storePossiblePlaces();
+        //storePossiblePlaces();
         System.out.println("Here are your available scorecard lines:");
         displayPossLines();
 
@@ -333,15 +344,20 @@ public class Scorecard {
         String name = "";
         int size = sizeSC - numY;
 
-        storePossiblePlaces();
+       // storePossiblePlaces();
 
-
-        //make sure change card list is called before this
-        for(int i = 0; i < size; i++ ) {
+        for(int i = 0; i < possList.size(); i++) {
             name = possList.get(i).get(0);
             score = possList.get(i).get(1);
             System.out.println("Score is " + score + " if you choose the " + name + " line");
         }
+
+        //make sure change card list is called before this
+       /* for(int i = 0; i < size; i++ ) {
+            name = possList.get(i).get(0);
+            score = possList.get(i).get(1);
+            System.out.println("Score is " + score + " if you choose the " + name + " line");
+        }*/
     }
 }
 //TODO: upper scoring and update score card and figure out why its not displaying, also add var to play while lines left

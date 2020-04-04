@@ -1,6 +1,10 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Enumeration;
 
 public class YahtzeeGUI extends JFrame{
     ConfigMenu configMenu;
@@ -74,8 +78,9 @@ public class YahtzeeGUI extends JFrame{
         JTextArea scorelines;
         JButton rollButton;
         JPanel possLinesPane; //TODO
-        JRadioButton possLines; //TODO remember must have radio button to select line
+        ArrayList<JRadioButton> possLines; //TODO remember must have radio button to select line
         ButtonGroup possLinesGroup;
+        JButton possLinesChoiceButton;
 
         MainFrame() {
             //stand up frame
@@ -86,11 +91,16 @@ public class YahtzeeGUI extends JFrame{
             mainFrame.setSize(800,700);
             mainFrame.setLocationRelativeTo(null);
             mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            mainFrame.setResizable(false);
+
+            possLinesPane = new JPanel();
+            possLinesPane.setLayout(new BoxLayout(possLinesPane, BoxLayout.PAGE_AXIS));
 
             new Hand();
             Hand.popNewHand();
             loadImageFrame();
-            mainFrame.add(dicePanel, BorderLayout.CENTER);
+            //populatePossLines();
+            //mainFrame.add(dicePanel, BorderLayout.CENTER);
 
             seeSCButton = new JButton("See your Scorecard"); //just do a little dialog box
             seeSCButton.addActionListener((ActionEvent e) -> {
@@ -110,15 +120,25 @@ public class YahtzeeGUI extends JFrame{
             rollButton = new JButton("Roll");
             rollButton.addActionListener((ActionEvent e) -> {
                 //roll functionality calls and changing of die
-
+                Dice.rollDie();
+                System.out.println("rollllll");
+                loadImageFrame();
+                //mainFrame.add(dicePanel, BorderLayout.CENTER);
+                //Scorecard.storePossiblePlaces();
+                populatePossLines();
+                //mainFrame.setVisible(true);
                 //maybe become unclickable or change to next round after 3rd turn.
                     });
             mainFrame.add(rollButton, BorderLayout.PAGE_END);
+            mainFrame.add(possLinesPane, BorderLayout.LINE_END);
+            System.out.println("possLinesPane");
 
             new Scorecard(Dice.numSides);
             populatePossLines();
-            mainFrame.add(possLinesPane, BorderLayout.LINE_END);
-
+            //Scorecard.readScoreFile("scorecard.txt");
+            //Scorecard.storePossiblePlaces();
+            //populatePossLines();
+            //mainFrame.add(possLinesPane, BorderLayout.LINE_END);
 
             mainFrame.setVisible(true);
         }
@@ -136,18 +156,27 @@ public class YahtzeeGUI extends JFrame{
         private void loadImageFrame() {
             String imageName;
             ImageIcon dicePic;
-            JLabel imageLbl;
+            JToggleButton imageLbl;
+            //Boolean[] selectedDie = new Boolean[Hand.numDie];
+            String[] names = new String[Hand.numDie];
 
             seeSCButton = new JButton();
             dicePanel = new JPanel();
 
+           // dicePanel.removeAll();
             for (int i = 0; i < Hand.numDie; i++) {
                 imageName = getImageName(i);
-                System.out.println(imageName);
+                names[i] = imageName;
                 dicePic = new ImageIcon(imageName);
-                imageLbl = new JLabel(dicePic, JLabel.CENTER);
+                imageLbl = new JToggleButton(dicePic);
+                if (checkIsToggled(imageLbl, i)) {
+                    //imageLbl.setIcon();
+                }
                 dicePanel.add(imageLbl);
+                //imageLbl.addActionListener();
             }
+            mainFrame.add(dicePanel, BorderLayout.CENTER);
+           // mainFrame.setVisible(true);
         }
 
         private void loadSC() {
@@ -191,20 +220,83 @@ public class YahtzeeGUI extends JFrame{
         }
 
         private void populatePossLines() {
+            Box possLinesBox = Box.createVerticalBox();
+            JLabel scorecardLbl = new JLabel("Your Possible Scores: ");
+            //BorderLayout layout = (BorderLayout)mainFrame.getLayout();
+            possLinesChoiceButton = new JButton("Choose line");
+            possLines = new ArrayList<>();
+            possLines.ensureCapacity(Scorecard.possList.size());
             possLinesGroup = new ButtonGroup();
-            possLinesPane = new JPanel();
-
-            possLines = new JRadioButton("Score is " + Scorecard.possList.get(0).get(1) + " if you choose the " + Scorecard.possList.get(0).get(0), true);
-            possLinesGroup.add(possLines);
-            possLinesPane.add(possLines);
-
-            for(int i = 1; i < Scorecard.possList.size(); i++) {
-                possLines = new JRadioButton("Score is " + Scorecard.possList.get(i).get(1) + " if you choose the " + Scorecard.possList.get(i).get(0), false);
-                possLinesGroup.add(possLines);
-                possLinesPane.add(possLines);
+            //possLinesPane.removeAll();
+           // mainFrame.remove(layout.getLayoutComponent(BorderLayout.LINE_END));
+            Scorecard.storePossiblePlaces();
+            possLinesPane.removeAll();
+            for(int i = 0; i < Scorecard.possList.size(); i++) {
+                possLines.add(new JRadioButton("Score is " + Scorecard.possList.get(i).get(1) + " if you choose the " + Scorecard.possList.get(i).get(0), false));
+                possLinesBox.add(possLines.get(i));
+                possLinesGroup.add(possLines.get(i));
             }
 
-            //possLinesPane.add(possLinesGroup);
+            possLinesPane.add(scorecardLbl);
+            possLinesPane.add(possLinesBox);
+            possLinesPane.add(possLinesChoiceButton);
+
+            possLinesChoiceButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    scoreChosenLine(possLinesGroup);
+                    populatePossLines();
+                }
+            });
+
+            possLinesPane.repaint();
+            mainFrame.setVisible(true);
+        }
+
+        void scoreChosenLine(ButtonGroup buttonG) {
+            ButtonGroup buttonGroup = buttonG;
+            Enumeration buttons;
+            AbstractButton absButton;
+            int i = 0;
+            String lineName;
+
+            //iterate through button group (probs pass in) and look for selected one break once found and pass in i
+            buttonG.getSelection();
+            buttons = buttonGroup.getElements();
+
+            while (buttons.hasMoreElements()) {
+                absButton = (AbstractButton)buttons.nextElement();
+
+                //locate index then call writeSC by passing extracted string name  in
+                if (absButton.isSelected()) {
+                    break;
+                }
+                i++;
+            }
+
+            System.out.println(Scorecard.possList.size() + " " + i);
+
+            lineName = Scorecard.possList.get(i).get(0);
+            Scorecard.changeCardList(lineName);
+            //mainFrame.remove(layout.getLayoutComponent(BorderLayout.LINE_END));
+            //populatePossLines();
+        }
+
+        boolean checkIsToggled(JToggleButton tButton, int i) {
+            JToggleButton togBut = tButton;
+            int idx = i;
+            char[] charArr = Hand.keepStr.toCharArray();
+
+            if (togBut.isSelected()) {
+                charArr[idx] = 'y';
+                return true;
+            }
+            else {
+                charArr[idx] = 'n';
+            }
+
+            Hand.keepStr = new String(charArr);
+            return false;
         }
     }
 }
